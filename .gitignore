@@ -1,0 +1,12 @@
+*.jpg
+*.png
+*.docx
+*.xlsx
+.Rhistory
+.Rproj.user\
+.DS_Store
+.Rdata
+graphs\
+manuscript\
+raw\
+original\
