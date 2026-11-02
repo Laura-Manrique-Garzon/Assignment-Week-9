@@ -66,19 +66,11 @@ final-project/
 | `r_scripts/original/` | The original R script that processed the data. |
 | `r_scripts/processed/` | The final R script that processed the data. |
 
-The project is stored in a GitHub repository: <https://github.com/Laura-Manrique-Garzon/Final_Project>
+The project is stored in a GitHub repository: <https://github.com/Laura-Manrique-Garzon-Assignment-Week-9>
 
 # Raw Data
 
 This project uses 10 initial datasets; one of them, corresponding to the study’s biological data, is a 10-year compilation of data on the nesting biology of *M. genalis* from my previous laboratory. The other 9 datasets consist of ENSO data and environmental data from the BCI, which are in the public domain.
-
-These are the files currently in `data/raw/`:
-
-```{r raw-file-list}
-raw_files <- list.files("data/raw", full.names = TRUE)
-knitr::kable(data.frame(file = basename(raw_files),
-                        size_kb = round(file.size(raw_files) / 1024, 1)))
-```
 
 ## File 1: obs_nests_all_2026.csv
 
@@ -87,22 +79,6 @@ knitr::kable(data.frame(file = basename(raw_files),
 - **License or terms of use:** This information is confidential, as the work is scheduled to be published soon.
 
 This dataset contains information on the behavior of nests of *Megalopta*, a genus of tropical, crepuscular sweat bees. The data were collected on Barro Colorado Island (BCI), a field station of the Smithsonian Tropical Research Institute located in the middle of the Panama Canal. The data cover 11 years of monitoring, from 2014 to 2026. It is organized into rows, with each row containing information on a single nest; the total number of nests with recorded data is 662.
-
-```{r read-file-1}
-file1 <- read.csv("data/raw/obs_nests_all_2026.csv", stringsAsFactors = FALSE, na.strings = "")
-```
-
-This file has `r nrow(file1)` rows and `r ncol(file1)` columns. Here are the first few rows:
-
-```{r head-file-1}
-knitr::kable(head(file1))
-```
-
-And here is the type of each column, as R reads it:
-
-```{r str-file-1}
-str(file1)
-```
 
 ### Data dictionary for file 1
 

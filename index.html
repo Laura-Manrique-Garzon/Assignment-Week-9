@@ -11,7 +11,7 @@
 
 <meta name="author" content="Laura Milena Manrique Garzon" />
 
-<meta name="date" content="2026-10-19" />
+<meta name="date" content="2026-11-02" />
 
 <title>Pollinators Under Pressure: Can Climate Shape Bee Sociality Through Floral Resource Availability?</title>
 
@@ -353,7 +353,7 @@ display: none;
 <h1 class="title toc-ignore">Pollinators Under Pressure: Can Climate
 Shape Bee Sociality Through Floral Resource Availability?</h1>
 <h4 class="author">Laura Milena Manrique Garzon</h4>
-<h4 class="date">2026-10-19</h4>
+<h4 class="date">2026-11-02</h4>
 
 </div>
 
@@ -518,7 +518,7 @@ edited.</td>
 </tr>
 </tbody>
 </table>
-<p>The project is stored in a GitHub repository: <a href="https://github.com/Laura-Manrique-Garzon/Final_Project" class="uri">https://github.com/Laura-Manrique-Garzon/Final_Project</a></p>
+<p>The project is stored in a GitHub repository: <a href="https://github.com/Laura-Manrique-Garzon-Assignment-Week-9" class="uri">https://github.com/Laura-Manrique-Garzon-Assignment-Week-9</a></p>
 </div>
 <div id="raw-data" class="section level1">
 <h1>Raw Data</h1>
@@ -527,60 +527,6 @@ the study’s biological data, is a 10-year compilation of data on the
 nesting biology of <em>M. genalis</em> from my previous laboratory. The
 other 9 datasets consist of ENSO data and environmental data from the
 BCI, which are in the public domain.</p>
-<p>These are the files currently in <code>data/raw/</code>:</p>
-<pre class="r"><code>raw_files &lt;- list.files(&quot;data/raw&quot;, full.names = TRUE)
-knitr::kable(data.frame(file = basename(raw_files),
-                        size_kb = round(file.size(raw_files) / 1024, 1)))</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="left">file</th>
-<th align="right">size_kb</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">enso_data.csv</td>
-<td align="right">2.7</td>
-</tr>
-<tr class="even">
-<td align="left">monthly_air_press.csv</td>
-<td align="right">3.1</td>
-</tr>
-<tr class="odd">
-<td align="left">monthly_hummidity.csv</td>
-<td align="right">2.0</td>
-</tr>
-<tr class="even">
-<td align="left">monthly_precipitation.csv</td>
-<td align="right">9.5</td>
-</tr>
-<tr class="odd">
-<td align="left">monthly_rain_electric.csv</td>
-<td align="right">4.8</td>
-</tr>
-<tr class="even">
-<td align="left">monthly_soil_manual.csv</td>
-<td align="right">5.0</td>
-</tr>
-<tr class="odd">
-<td align="left">monthly_solar_radiation_adjusted.csv</td>
-<td align="right">3.2</td>
-</tr>
-<tr class="even">
-<td align="left">monthly_solar_radiation_without_correction.csv</td>
-<td align="right">3.0</td>
-</tr>
-<tr class="odd">
-<td align="left">monthly_temperature_average.csv</td>
-<td align="right">4.2</td>
-</tr>
-<tr class="even">
-<td align="left">obs_nests_all_2026.csv</td>
-<td align="right">110.7</td>
-</tr>
-</tbody>
-</table>
 <div id="file-1-obs_nests_all_2026.csv" class="section level2">
 <h2>File 1: obs_nests_all_2026.csv</h2>
 <ul>
@@ -601,44 +547,6 @@ the Smithsonian Tropical Research Institute located in the middle of the
 Panama Canal. The data cover 11 years of monitoring, from 2014 to 2026.
 It is organized into rows, with each row containing information on a
 single nest; the total number of nests with recorded data is 662.</p>
-<pre class="r"><code>file1 &lt;- read.csv(&quot;data/raw/obs_nests_all_2026.csv&quot;, stringsAsFactors = FALSE, na.strings = &quot;&quot;)</code></pre>
-<p>This file has 666 rows and 1 columns. Here are the first few
-rows:</p>
-<pre class="r"><code>knitr::kable(head(file1))</code></pre>
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">chemotype.year.Category.Orig_nest_ID.BeeID.Species.group.hood.Emerged.Date_to_field.emergence_mass_g.collection_mass_g.mass_g.foundress_intertegular_mm.foundress_head_width_mm.daughter1_intertegular_mm.daughter1_head_width_mm.Q.W_O1.Intertegular.C1_Close.Offspring_1_emergence_Date.Offspring_1_Mass.STRATEGY_1soc_2sol.STRATEGY2_1soc_2latesoc_3sol.Outcome_1_1stay_2usu_3disp_4workerkilled_O1Fonly.Outcome_1_1stay_2usu_3disp_4workerkilled_allB1F.brood_1_sequence.brood_1_size.brood_1_size_for_proportion.number_of_females.number_of_offspring_without_sex.sex_proportion.Manipulated_0_no_1_yes_diet_2_yes_social_3_yes_diet.restriction.at.morning_4_yes_changed.egg_5_bee.farm.Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Type_1;2018;LRO18_19_by_Type;C2-5-2;C1;genalis;6;2;2018-02-27;2018-02-28;0.1156;NA;0.1156;2.859;3.673;2.897;3.8;-0.038;2018-03-14;2018-04-19;0.1294;1;1;1;1;FMMMM?;6;5;1;1;0.2;0;NA</td>
-</tr>
-<tr class="even">
-<td align="left">Type_1;2018;LRO18_19_by_Type;E13-26-2;C11;genalis;3;55;2018-03-05;2018-03-06;0.1279;NA;0.1279;3.025;4.384;2.855;4.13;0.17;2018-03-20;2018-04-25;0.1303;1;1;3;1;FMF;3;3;2;0;0.666666667;0;NA</td>
-</tr>
-<tr class="odd">
-<td align="left">Type_2;2018;LRO18_19_by_Type;C2-26-2;C1;genalis;7;134;2018-03-08;2018-03-09;0.0608;NA;0.0608;2.94;3.923;2.823;3.564;0.117;2018-03-22;2018-04-29;0.0934;1;1;1;1;FMMFM?M?;8;6;2;2;0.333333333;0;NA</td>
-</tr>
-<tr class="even">
-<td align="left">Type_1;2018;LRO18_19_by_Type;C9-4-3;C8;genalis;8;2;2018-03-11;2018-03-12;0.1714;NA;0.1714;3.116;4.082;2.799;3.616;0.317;2018-03-28;2018-05-03;0.1204;1;1;1;1;FFM?;4;3;2;1;0.666666667;0;NA</td>
-</tr>
-<tr class="odd">
-<td align="left">Type_2;2018;LRO18_19_by_Type;E1-8-3;C6;genalis;7;8;2018-03-08;2018-03-09;0.0771;NA;0.0771;2.45;3.274;2.701;3.517;-0.251;2018-03-24;2018-04-29;0.0972;1;1;1;1;FM;2;2;1;0;0.5;0;NA</td>
-</tr>
-<tr class="even">
-<td align="left">Type_1;2018;LRO18_19_by_Type;E13-13-2;C2;genalis;5;208;2018-03-06;2018-03-07;0.186;NA;0.186;3.388;4.407;2.853;3.613;0.535;2018-03-22;2018-04-29;0.1069;1;1;1;1;FFM?;4;3;2;1;0.666666667;0;NA</td>
-</tr>
-</tbody>
-</table>
-<p>And here is the type of each column, as R reads it:</p>
-<pre class="r"><code>str(file1)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    666 obs. of  1 variable:
-##  $ chemotype.year.Category.Orig_nest_ID.BeeID.Species.group.hood.Emerged.Date_to_field.emergence_mass_g.collection_mass_g.mass_g.foundress_intertegular_mm.foundress_head_width_mm.daughter1_intertegular_mm.daughter1_head_width_mm.Q.W_O1.Intertegular.C1_Close.Offspring_1_emergence_Date.Offspring_1_Mass.STRATEGY_1soc_2sol.STRATEGY2_1soc_2latesoc_3sol.Outcome_1_1stay_2usu_3disp_4workerkilled_O1Fonly.Outcome_1_1stay_2usu_3disp_4workerkilled_allB1F.brood_1_sequence.brood_1_size.brood_1_size_for_proportion.number_of_females.number_of_offspring_without_sex.sex_proportion.Manipulated_0_no_1_yes_diet_2_yes_social_3_yes_diet.restriction.at.morning_4_yes_changed.egg_5_bee.farm.Notes: chr  &quot;Type_1;2018;LRO18_19_by_Type;C2-5-2;C1;genalis;6;2;2018-02-27;2018-02-28;0.1156;NA;0.1156;2.859;3.673;2.897;3.8&quot;| __truncated__ &quot;Type_1;2018;LRO18_19_by_Type;E13-26-2;C11;genalis;3;55;2018-03-05;2018-03-06;0.1279;NA;0.1279;3.025;4.384;2.855&quot;| __truncated__ &quot;Type_2;2018;LRO18_19_by_Type;C2-26-2;C1;genalis;7;134;2018-03-08;2018-03-09;0.0608;NA;0.0608;2.94;3.923;2.823;3&quot;| __truncated__ &quot;Type_1;2018;LRO18_19_by_Type;C9-4-3;C8;genalis;8;2;2018-03-11;2018-03-12;0.1714;NA;0.1714;3.116;4.082;2.799;3.6&quot;| __truncated__ ...</code></pre>
 <div id="data-dictionary-for-file-1" class="section level3">
 <h3>Data dictionary for file 1</h3>
 <table style="width:100%;">
